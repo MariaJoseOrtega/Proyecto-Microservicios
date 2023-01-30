@@ -2,17 +2,23 @@ package proyecto.api_proyecto.feature.integrantes;
 
 import java.sql.Timestamp;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 import lombok.Data;
 
+@Entity
 @Data
 @Table("integrantes")
 public class Integrantes {
 
     @Id
     @Column("id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long integrantesId;
     @Column("num_proyecto")
     private String numProyecto;

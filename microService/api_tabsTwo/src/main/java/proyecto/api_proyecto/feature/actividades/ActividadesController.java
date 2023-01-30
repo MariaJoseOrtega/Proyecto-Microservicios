@@ -47,5 +47,11 @@ public class ActividadesController {
     public void delete(@PathVariable long id){
         actividadesService.deleteById(id);
     }
-    
+
+    @GetMapping("/reporte")
+    public String reporte(){
+        return "voy a enviar un report";
+        //aqui vas poner toda la logica para crear el reporte
+        //y cuando ya lo tengas retornas el reporte
+    }
 }

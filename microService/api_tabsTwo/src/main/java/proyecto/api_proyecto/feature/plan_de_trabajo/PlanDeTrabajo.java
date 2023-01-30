@@ -2,51 +2,74 @@ package proyecto.api_proyecto.feature.plan_de_trabajo;
 
 import java.sql.Timestamp;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import lombok.Data;
 
 @Data
-@Table("plan_de_trabajo")
+@Table(name = "plan_de_trabajo")
+@Entity
 public class PlanDeTrabajo {
     
     @Id
-    @Column("id")
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long planTrabajoId;
-    @Column("descripcion_general")
+
+    @Column(name = "descripcion_general")
     private String descripcionGe;
-    @Column("objetivo_proyecto")
+
+    @Column(name =  "objetivo_proyecto")
     private String objetivoPro;
-    @Column("analisis_situacional")
+
+    @Column(name =  "analisis_situacional")
     private String analisisSi;
-    @Column("justificacion")
+
+    @Column(name =  "justificacion")
     private String justificacion;
-    @Column("num_objetivos")
+
+    @Column(name = "num_objetivos")
     private String numObjetivos;
-    @Column("nombre_objetivos")
+
+    @Column(name =  "nombre_objetivos")
     private String nombreOb;
-    @Column("objetivo_objetivos")
+
+    @Column(name =  "objetivo_objetivos")
     private String objetivoOb;
-    @Column("indicador_objetivos")
+
+    @Column(name =  "indicador_objetivos")
     private String indicadorOb;
-    @Column("metodos_objetivos")
+
+    @Column(name =  "metodos_objetivos")
     private String metodosOb;
-    @Column("num_criterios")
+
+    @Column(name =  "num_criterios")
     private String numCriterios;
-    @Column("nombre_criterios")
+
+    @Column(name =  "nombre_criterios")
     private String nombreCriterios;
-    @Column("criterio_criterios")
+
+    @Column(name =  "criterio_criterios")
     private String criterioCriterios;
-    @Column("objetivos_especificos")
+
+    @Column(name =  "objetivos_especificos")
     private String objetivosEs;
-    @Column("indicadores_verificables")
+
+    @Column(name =  "indicadores_verificables")
     private String indicadoresVe;
-    @Column("medios_verificacion")
+
+    @Column(name =  "medios_verificacion")
     private String mediosVe;
-    @Column("conclusiones")
+
+    @Column(name =  "conclusiones")
     private String conclusiones;
-    @Column("recomendaciones")
+
+    @Column(name =  "recomendaciones")
     private String recomendaciones;
 
 }

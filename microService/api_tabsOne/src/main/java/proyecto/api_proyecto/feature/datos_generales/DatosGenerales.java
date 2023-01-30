@@ -1,18 +1,24 @@
 package proyecto.api_proyecto.feature.datos_generales;
 
-import java.sql.Timestamp;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 import lombok.Data;
 
+
+@Entity
 @Data
 @Table("datos_generales")
 public class DatosGenerales {
     
     @Id
     @Column("id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long dgId;
     @Column("codigo_proyecto")
     private long codigo;
